@@ -443,6 +443,9 @@ import {Calculator} from './shortestpaths'
 
         // does the path a-b-c describe a left turn?
         private static isLeft(a, b, c) {
+            if (!a || !b || !c) {
+                return false;
+            }
             return ((b.x - a.x) * (c.y - a.y) - (b.y - a.y) * (c.x - a.x)) <= 0;
         }
 
